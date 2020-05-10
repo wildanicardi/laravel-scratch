@@ -14,6 +14,7 @@ Released   : 20140225
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
@@ -24,6 +25,7 @@ Released   : 20140225
 @yield('head')
 </head>
 <body>
+    <div id="app">
     <div id="header-wrapper">
         <div id="header" class="container">
             <div id="logo">
@@ -36,7 +38,6 @@ Released   : 20140225
                     <li class="{{Request::path() === 'about' ? 'current_page_item':''}}"><a href="/about" accesskey="3" title="">About Us</a></li>
                     <li class="{{Request::path() === 'articles' ? 'current_page_item':''}}"><a href="/articles" accesskey="4" title="">Articles</a></li>
                 <li class="{{Request::path() === 'login' ? 'current_page_item':''}}"><a href="{{route('login')}}" accesskey="5" title="">Login</a></li>
-
                 </ul>
             </div>
         </div>
@@ -46,6 +47,7 @@ Released   : 20140225
 <div id="copyright" class="container">
 	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
 </div>
+    </div>
 <script src="js/app.js"></script>
 </body>
 </html>
