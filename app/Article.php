@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
+use App\Tag;
 
 class Article extends Model
 {
@@ -16,5 +18,13 @@ class Article extends Model
     public function path()
     {
         return route('articles.show', $this);
+    }
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }
