@@ -20,10 +20,8 @@ Route::get('/about', function () {
         'articles' => App\Article::latest()->get()
     ]);
 });
-// Route::get('/articles', 'ArticleController@index');
-// Route::get('/articles/create', 'ArticleController@create');
-// Route::post('/articles', 'ArticleController@store');
-// Route::get('/articles/{article}', 'ArticleController@show');
-// Route::get('/articles/{article}/edit', 'ArticleController@edit');
-// Route::put('/articles/{article}/update', 'ArticleController@update');
 Route::resource('articles', 'ArticleController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
