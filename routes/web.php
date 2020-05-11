@@ -22,6 +22,8 @@ Route::get('/about', function () {
 });
 Route::resource('articles', 'ArticleController');
 Route::resource('contact', 'ContactController');
+Route::resource('payment', 'NotificationPayment')->middleware('auth');
+Route::resource('notifications', 'UserNotificationController')->middleware('auth');
 
 Auth::routes();
 
