@@ -12,6 +12,7 @@
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
+        "laravel/nexmo-notification-channel": "^2.3",
         "laravel/tinker": "^2.0"
     },
     "require-dev": {
