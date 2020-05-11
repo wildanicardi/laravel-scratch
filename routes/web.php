@@ -21,6 +21,7 @@ Route::get('/about', function () {
     ]);
 });
 Route::resource('articles', 'ArticleController');
+Route::resource('contact', 'ContactController');
 
 Auth::routes();
 
