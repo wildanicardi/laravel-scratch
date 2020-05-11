@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Notifications\EmailNotification;
 use Illuminate\Http\Request;
+use App\Events\ProductPurchase;
+use App\Notifications\EmailNotification;
 
 class NotificationPayment extends Controller
 {
@@ -35,8 +36,11 @@ class NotificationPayment extends Controller
      */
     public function store()
     {
-        request()->user()->notify(new EmailNotification(900));
-        return redirect('/payment/create')->with('message', 'Notification Sent');
+        // send notification
+        // request()->user()->notify(new EmailNotification(900));
+        // return redirect('/payment/create')->with('message', 'Notification Sent');
+
+        ProductPurchase::dispatch('toy');
     }
 
     /**
