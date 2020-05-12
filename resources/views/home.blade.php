@@ -31,6 +31,11 @@
                         @csrf
                     </form>
                 </div>
+                <div class="control">
+                    @can('edit_forum')
+                    <h1>Edit Forum</h1>
+                    @endcan
+                </div>
             </div>
         </div>
     </div>

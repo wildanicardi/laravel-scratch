@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Conversation;
+use App\Role;
 use Illuminate\Http\Request;
 
-class ConversationsController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class ConversationsController extends Controller
      */
     public function index()
     {
-        return view('conversations.index', [
-            'conversations' => Conversation::all()
-        ]);
+        //
     }
 
     /**
@@ -43,24 +41,21 @@ class ConversationsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Conversation  $conversation
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Conversation $conversation)
+    public function show(Role $role)
     {
-        // $this->authorize('view', $conversation);
-        return view('conversations.show', [
-            'conversation' => $conversation
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Conversation  $conversation
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(Conversation $conversation)
+    public function edit(Role $role)
     {
         //
     }
@@ -69,10 +64,10 @@ class ConversationsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Conversation  $conversation
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Conversation $conversation)
+    public function update(Request $request, Role $role)
     {
         //
     }
@@ -80,10 +75,10 @@ class ConversationsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Conversation  $conversation
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Conversation $conversation)
+    public function destroy(Role $role)
     {
         //
     }

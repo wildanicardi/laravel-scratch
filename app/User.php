@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Role;
 use App\Reply;
 use App\Article;
 use App\Project;
@@ -64,5 +65,20 @@ class User extends Authenticatable
     public function repliy()
     {
         return $this->hasMany(Reply::class);
+    }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+    public function assignRole($role)
+    {
+        if (is_string($role)) {
+            $role = Role::whereName($role)->firstOrFail();
+        }
+        $this->roles()->sync($role, false);
+    }
+    public function abilities()
+    {
+        return $this->roles->map->abilities->flatten()->pluck('name')->unique();
     }
 }

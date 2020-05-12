@@ -31,5 +31,10 @@ class AuthServiceProvider extends ServiceProvider
         //     // return true;
         //     return $conversation->user->is($user);
         // });
+
+        // user abilty role
+        // Gate::before(function ($user, $ability) {
+        //     return $user->abilities()->contains($ability);
+        // });
     }
 }
