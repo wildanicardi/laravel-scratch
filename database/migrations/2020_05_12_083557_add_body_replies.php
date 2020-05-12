@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectsTable extends Migration
+class AddBodyReplies extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+        Schema::table('replies', function (Blueprint $table) {
+            $table->text('body')->after('title');
         });
     }
 
@@ -26,6 +25,8 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::table('replies', function (Blueprint $table) {
+            $table->dropColumn('body');
+        });
     }
 }

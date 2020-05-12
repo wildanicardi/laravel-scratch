@@ -22,9 +22,10 @@ Route::get('/about', function () {
 });
 Route::resource('articles', 'ArticleController');
 Route::resource('contact', 'ContactController');
+Route::resource('conversations', 'ConversationsController');
 Route::resource('payment', 'NotificationPayment')->middleware('auth');
 Route::resource('notifications', 'UserNotificationController')->middleware('auth');
-
+Route::post('best-replies/{reply}', 'ConversationBestReplyController@store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

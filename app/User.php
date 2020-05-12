@@ -2,11 +2,13 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use App\Reply;
 use App\Article;
 use App\Project;
+use App\Conversation;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -54,5 +56,13 @@ class User extends Authenticatable
     public function project()
     {
         return $this->hasMany(Project::class);
+    }
+    public function conversations()
+    {
+        return $this->hasMany(Conversation::class);
+    }
+    public function repliy()
+    {
+        return $this->hasMany(Reply::class);
     }
 }
